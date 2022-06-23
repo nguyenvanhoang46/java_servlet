@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javaservlet.entity.Category;
 import javaservlet.entity.Product;
+import javaservlet.repository.CategoryRepository;
 import javaservlet.repository.ProductRepository;
 
 /**
@@ -32,10 +34,12 @@ public class ProductController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductRepository productRepository = new ProductRepository();
+		CategoryRepository categoryRepository = new CategoryRepository();
 		List<Product> list = productRepository.getAllProduct();
+		List<Category> listC = categoryRepository.getAllCategory();
 		System.out.println(list.get(0));
-		System.out.println("hhggggggggggggggggggggggggggg");
 		request.setAttribute("listP", list);
+		request.setAttribute("listC", listC);
 
 		// TODO Auto-generated method stub
 		request.getRequestDispatcher("/index.jsp").forward(request, response);

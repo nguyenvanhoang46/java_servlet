@@ -35,6 +35,25 @@ public class ProductRepository {
 		
 		return list;
 	}
+	public Product getLast() {
+		String query = "select top 1 * from product\n" + "order by id desc";
+
+		try {
+			conn = new DBCon().getConnection();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				return new Product(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getInt(3),
+						rs.getString(4));
+			}
+		} catch (Exception e) {
+
+		}
+		return null;
+	}
 	public static void main(String[] args) {
 		ProductRepository productRepository = new ProductRepository();
 		List<Product> list = productRepository.getAllProduct();
