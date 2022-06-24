@@ -53,10 +53,11 @@
       </div>
       <div class="col">
         <div class="search pt-3">
-          <form action="#" class="form-search ">
-            <input type="search" class="input-search" placeholder="Tìm kiếm...">
-            <button class="button-i button"><i
-                    class="fa-solid fa-magnifying-glass"></i></button>
+          <form action="search" method="post" class="form-search ">
+            <input type="text" name="txt" class="input-search" placeholder="Tìm kiếm...">
+            <button type="submit" class="button-i button"><i
+                    class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -149,7 +150,7 @@
     <div class="container mt-3 pb-3">
       <ul class="nav nav-bar justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./Index.html">TRANG CHỦ</a>
+          <a class="nav-link active" aria-current="page" href="home">TRANG CHỦ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./introducepage.html">GIỚI THIỆU</a>

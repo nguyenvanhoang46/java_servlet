@@ -54,9 +54,9 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <form action="" class="ms-3">
+            <form action="search" class="ms-3">
                 <input type="text" placeholder="  Tìm kiếm..." class="form-search-item">
-                <button class="form_search-item">
+                <button type="submit" class="form_search-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
@@ -70,7 +70,7 @@
                             <img class="badge-inner-item" src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/product-16-100x100.jpg" alt="">
                         </div>
                         <div class="flex-col ms-5 flex-grow">
-                            <div class="mt-">${p.name}</div>
+                            <div class="mt-">${cp.name}</div>
                             <div class="mt-3 grow-item">700,000 ₫</div>
                         </div>
                     </div>

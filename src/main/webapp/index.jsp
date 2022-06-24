@@ -167,10 +167,10 @@
                                      class="card-img-top image image" alt="...">
                                 <div class="card-body">
                                     <div class="card-body-item ms-2">
-                                        <h6 class="card-title ms-5 ten-item-column ">${product.name}</h6>
+                                        <h6 class="card-title ms-5 ten-item-column "><a href="detail?pid=${product.id}">${product.name}</a></h6>
                                         <p class="card-text ms-3">
-                                            <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>
-                                            <span class="span-price gia">500,000 <u>đ</u></span>
+<%--                                            <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>--%>
+                                            <span class="span-price gia">${product.price} <u>đ</u></span>
                                         </p>
                                         <button class="btn text-light ms-4 cart-slider add-to-cart add-to-cart">Thêm vào giỏ</button>
                                     </div>
