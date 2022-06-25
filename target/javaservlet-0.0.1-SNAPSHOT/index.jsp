@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>Servlet</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css" type="text/css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/glider.css" type="text/css">
@@ -76,32 +76,6 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
-</div>
-<!-- banner -->
-<div class="section sec_trend mt-5">
-    <div class="section-bg container">
-        <div class="row justify-content-center">
-            <div class="col-5 section-bg-item">
-                <div class="title">
-                    <h5 class="text-light">Xu hướng 2019</h5>
-                    <div class="baner-background"></div>
-                    <h2 class="text-light title-h2">
-                        ĐỒNG HỒ NAM
-                    </h2>
-                </div>
-            </div>
-            <!-- <div class="col-2"></div> -->
-            <div class="col-5 ms-5 section-bg-item2">
-                <div class="title">
-                    <h5 class="text-light">Xu hướng 2019</h5>
-                    <div class="baner-background"></div>
-                    <h2 class="text-light title-h2">
-                        ĐỒNG HỒ NỮ
-                    </h2>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- banner -->
@@ -641,7 +615,7 @@
     </div>
 </div>
 </div>
-
+<jsp:include page="footer.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>

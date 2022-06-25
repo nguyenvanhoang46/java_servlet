@@ -17,19 +17,19 @@
     <div class="row row-top">
       <div class="col-5 mt-2">
                             <span class="row-top-address row-top text-light">
-                                <span class="" style="font-size: 17px;"><i class="fa-solid fa-location-dot"></i></span>
+                                <span class="" style="font-size: 17px;"><img alt="govno" src="<%=request.getContextPath() + "/image/placeholder.png"%>"></span>
                                 <span class="ms-2">319 - C16 Lý Th ường Kiệt, P.15, Q.Tp.HCM
                             </span>
         </span>
-        <span class="text-light ps-3"><i class="fa-solid fa-phone"></i></span>
+        <span class="text-light ps-3"><img alt="govno" src="<%=request.getContextPath() + "/image/telephone.png"%>"></span>
         <span class="text-light ps-1">076 922 0162</span>
       </div>
       <div class="col-5"></div>
       <div class="col-2  mt-2 row-top row-top-item text-light d-flex align-items-center">
         <div class=" row-top ">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-instagram ms-2"></i>
-          <i class="fa-brands fa-twitter ms-2"></i>
+          <img alt="govno" src="<%=request.getContextPath() + "/image/facebook.png"%>">
+          <img alt="govno" class="ms-2" src="<%=request.getContextPath() + "/image/instagram.png"%>">
+          <img alt="govno" class="ms-2" src="<%=request.getContextPath() + "/image/twitter.png"%>">
         </div>
         <div class="ms-3 mt-1 row-top2"></div>
         <div class="ms-2 row-top text-light">

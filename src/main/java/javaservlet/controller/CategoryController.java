@@ -18,9 +18,8 @@ public class CategoryController extends HttpServlet {
         ProductRepository productRepository = new ProductRepository();
         CategoryRepository categoryRepository = new CategoryRepository();
         List<Product> list = productRepository.getAllProduct();
-        List<Category> listC = categoryRepository.getAllCategory();
+        List<Category> listC = productRepository.getAllCategory();
         Product last = productRepository.getLast();
-        System.out.println();
         request.setAttribute("listP", list);
         request.setAttribute("listC", listC);
         request.setAttribute("p", last);
