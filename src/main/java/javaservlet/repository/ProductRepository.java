@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javaservlet.connection.DBCon;
+import javaservlet.entity.Cart;
 import javaservlet.entity.Category;
 import javaservlet.entity.Product;
 
@@ -15,7 +16,12 @@ public class ProductRepository {
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
-	
+
+
+public ProductRepository(Connection conn) {
+	super();
+	this.conn = conn;
+}
 	public List<Product> getAllProduct() {
 		List<Product> list = new ArrayList<>();
 		String query = "select * from product";
@@ -35,6 +41,75 @@ public class ProductRepository {
 		}
 		
 		return list;
+	}
+
+	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
+		List<Cart> products = new ArrayList<Cart>();
+		try {
+			if (cartList.size()>0) {
+				for (Cart item:cartList){
+					String query = "select * from product where id=?";
+					ps = conn.prepareStatement(query);
+					ps.setInt(1,item.getId());
+					rs = ps.executeQuery();
+					while (rs.next()) {
+						Cart row = new Cart();
+						row.setId(rs.getInt("id"));
+						row.setName(rs.getString("name"));
+						row.setPrice(rs.getInt("price")*item.getQuantity());
+						row.setQuantity(item.getQuantity());
+						products.add(row);
+					}
+				}
+			}
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+
+		return products;
+	}
+
+	public double getTotalCartPrice(ArrayList<Cart> cartList) {
+		double sum =0;
+		try {
+			if (cartList.size()>0) {
+				for (Cart item:cartList) {
+					String query = "select price from product where id=?";
+					ps = conn.prepareStatement(query);
+					ps.setInt(1, item.getId());
+					rs = ps.executeQuery();
+					while (rs.next()) {
+						sum+= rs.getInt("price")* item.getQuantity();
+					}
+				}
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sum;
+	}
+
+	public List<Product> getAllProducts() {
+		List<Product> products = new ArrayList<Product>();
+
+		try {
+			String query = "select * from product";
+			ps = conn.prepareStatement(query);
+			ps.executeQuery();
+			while (rs.next()) {
+				Product row = new Product();
+				row.setId(rs.getInt("id"));
+				row.setName(rs.getString("name"));
+				row.setPrice(rs.getInt("price"));
+				row.setImage(rs.getString("image"));
+				products.add(row);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return products;
 	}
 
 	public List<Category> getAllCategory() {
@@ -94,6 +169,7 @@ public class ProductRepository {
 		return null;
 	}
 
+
 	public List<Product> searchByName(String txtSearch) {
 		List<Product> list = new ArrayList<>();
 		String query = "select * from product\n"
@@ -118,11 +194,11 @@ public class ProductRepository {
 
 
 
-	public static void main(String[] args) {
-		ProductRepository productRepository = new ProductRepository();
-		List<Product> list = productRepository.getAllProduct();
-		for (Product product : list) {
-			System.out.println(product);
-		}
-	}
+//	public static void main(String[] args) {
+//		ProductRepository productRepository = new ProductRepository();
+//		List<Product> list = productRepository.getAllProduct();
+//		for (Product product : list) {
+//			System.out.println(product);
+//		}
+//	}
 }

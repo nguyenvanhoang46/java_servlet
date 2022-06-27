@@ -1,0 +1,113 @@
+.cart-pic img {
+    width: 70px;
+}
+.cart_item-form td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.p-price{
+    font-weight: bold;
+}
+.image-home-pages {
+    width: 100%!important;
+}
+.pro-qty {
+    width: 123px;
+    height: 46px;
+    border: 2px solid #ebebeb;
+    /* padding: 0 15px; */
+    float: left;
+}
+.pro-qty input {
+    text-align: center;
+    width: 52px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    color: #4c4c4c;
+    line-height: 30px;
+    float: left;
+}
+.qtybtn {
+    margin-left: 10px;
+    font-size: 24px;
+    color: #b2b2b2;
+    float: left;
+    line-height: 38px;
+    cursor: pointer;
+    width: 18px;
+}
+.cart-title h5 {
+    font-size: 14px;
+}
+.cart-table table {
+    width: 85%;
+    margin-bottom: 1em;
+    border-color: #ececec;
+    border-spacing: 0;
+}
+.border-cart-item th {
+    padding: 0.5em;
+    border-bottom: 3px solid #ececec;
+}
+.cart_item-form {
+    border-bottom: 1px solid #ececec;
+}
+.cart-subtotal {
+    padding: 0.5em;
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+}
+.product-name-item {
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 3px solid #ececec;
+}
+.cart-subtotal-item {
+    border-bottom: 3px solid #ececec;
+
+}
+.checkout-button {
+    text-decoration: none;
+    display: block;
+    background-color: #d26e4b;
+    height: 39px;
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 2.4em;
+}
+
+.continue-shopping {
+    margin-top: 6px;
+}
+.button-continue-shopping {
+    border: 2px solid currentColor;
+    color: #c89979;
+    padding: 7px 25px 7px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+.button-continue-shopping:hover {
+    color: white;
+    background-color: #c89979;
+}
+.update-cart {
+    border: 2px solid currentColor;
+    color: #c89979;
+    padding: 8px 25px 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+.update-cart:hover {
+    color: white;
+    background-color: #c89979;
+}
+.quantity-list-cart {
+    width: 120px;
+}
+
+

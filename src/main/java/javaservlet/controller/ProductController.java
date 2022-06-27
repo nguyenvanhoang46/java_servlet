@@ -33,13 +33,13 @@ public class ProductController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductRepository productRepository = new ProductRepository();
-		CategoryRepository categoryRepository = new CategoryRepository();
-		List<Product> list = productRepository.getAllProduct();
-		List<Category> listC = categoryRepository.getAllCategory();
-		System.out.println(list.get(0));
-		request.setAttribute("listP", list);
-		request.setAttribute("listC", listC);
+//		ProductRepository productRepository = new ProductRepository();
+//		CategoryRepository categoryRepository = new CategoryRepository();
+//		List<Product> list = productRepository.getAllProduct();
+//		List<Category> listC = categoryRepository.getAllCategory();
+//		System.out.println(list.get(0));
+//		request.setAttribute("listP", list);
+//		request.setAttribute("listC", listC);
 
 		// TODO Auto-generated method stub
 		request.getRequestDispatcher("/index.jsp").forward(request, response);

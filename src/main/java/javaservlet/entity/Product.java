@@ -1,7 +1,7 @@
 package javaservlet.entity;
 
 
-
+import java.sql.Connection;
 
 public class Product {
 
@@ -16,6 +16,8 @@ public class Product {
 	public Product() {
 		
 	}
+
+
 	public Product(int id, String name, int price, String image) {
 		this.id = id;
 		this.name = name;

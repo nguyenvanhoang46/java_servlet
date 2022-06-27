@@ -1,4 +1,8 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="javaservlet.entity.Cart" %>
+<%@ page import="java.util.List" %>
+<%@ page import="javaservlet.repository.ProductRepository" %>
+<%@ page import="javaservlet.connection.DBCon" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 23/6/2022
@@ -12,6 +16,15 @@
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css">
 </head>
 <body>
+<%
+  ArrayList<Cart> cart_list =  (ArrayList<Cart>) session.getAttribute("cart-list");
+  List<Cart> cartProduct = null;
+  if (cart_list != null) {
+    ProductRepository pRepository = new ProductRepository(DBCon.getConnection());
+    cartProduct = pRepository.getCartProducts(cart_list);
+    request.setAttribute("cart_list", cart_list);
+  }
+%>
 <div class="top-bar">
   <div class="container">
     <div class="row row-top">
@@ -69,8 +82,8 @@
             </a>
           </div>
           <div class="haeder-navbar-item">
-            <a href="#" class="text-light ms-3" onclick="show()">
-              <i class="fa-solid fa-bag-shopping"></i>
+            <a href="cart.jsp" class="text-light ms-3" onclick="show()">
+              <i class="fa-solid fa-bag-shopping"> ${cart_list.size()} </i>
             </a>
             <div class="header-item"></div>
             <div class="header-nofify">
@@ -80,9 +93,8 @@
                     <table class="">
                       <tbody>
                       <tr class="mt-5">
-                        <td class="si-pic"><img class="img-cart"
-                                                src="hhttps://cdn3.dhht.vn/wp-content/uploads/2017/09/35_MTP-1302D-7A1VDF-399x399.jpg"
-                                                alt="">
+                        <td class="si-pic">
+                          <img class="img-cart" src="hhttps://cdn3.dhht.vn/wp-content/uploads/2017/09/35_MTP-1302D-7A1VDF-399x399.jpg" alt="">
                         </td>
                         <td class="mx-4 si-text">
                           <div class="product-selected">

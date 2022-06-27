@@ -13,12 +13,12 @@ import java.util.List;
 public class SearchController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String textSearch = request.getParameter("txt");
-            ProductRepository productRepository = new ProductRepository();
-            List<Product> list = productRepository.searchByName(textSearch);
-
-            request.setAttribute("listP", list);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+//            String textSearch = request.getParameter("txt");
+//            ProductRepository productRepository = new ProductRepository();
+//            List<Product> list = productRepository.searchByName(textSearch);
+//
+//            request.setAttribute("listP", list);
+//            request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override
