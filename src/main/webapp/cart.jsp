@@ -2,7 +2,8 @@
 <%@ page import="javaservlet.entity.Cart" %>
 <%@ page import="java.util.List" %>
 <%@ page import="javaservlet.repository.ProductRepository" %>
-<%@ page import="javaservlet.connection.DBCon" %><%--
+<%@ page import="javaservlet.connection.DBCon" %>
+<%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 27/6/2022
@@ -77,20 +78,16 @@
                                 <form action="order-now" method="post" class="mt-2 form-inline quantity-list-cart">
                                     <input type="hidden" name="id" value="<%= c.getId()%>" class="form-input">
                                     <div class="form-group d-flex justify-content-between">
-                                        <a class="btn bnt-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>"><i
-                                                class="fas fa-plus-square"></i></a>
-                                        <input type="text" name="quantity" class="form-control " value="<%=c.getQuantity()%>"
-                                               readonly>
-                                        <a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i
-                                                class="fas fa-minus-square"></i></a>
+                                        <a class="btn bnt-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>"><i class="fas fa-plus-square"></i></a>
+                                        <input type="text" name="quantity" class="form-control " value="<%=c.getQuantity()%>" readonly>
+                                        <a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i class="fas fa-minus-square"></i></a>
                                     </div>
                                     <%-- <button type="submit" class="btn btn-primary btn-sm">Buy</button>--%>
                                 </form>
                             </td>
                             <td class="total-price first-row">${total} ₫</td>
-                            <td class="close-td first-row me-5"><i class="far fa-times-circle"></i></td>
+                            <td class="close-td first-row me-5"><a href="remove-from-cart?id=<%=c.getId() %>"><i class="far fa-times-circle"></i></a></td>
                         </tr>
-
                         <%
                                 }}%>
                         </tbody>

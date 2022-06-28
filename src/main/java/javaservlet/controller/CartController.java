@@ -32,8 +32,6 @@ public class CartController extends HttpServlet {
                             cartList = cart_list;
                             boolean exist = false;
 
-
-
                             for (Cart c: cartList) {
                                 if (c.getId() == id) {
                                     exist = true;
