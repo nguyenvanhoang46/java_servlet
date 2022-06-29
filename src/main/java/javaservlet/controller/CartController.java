@@ -26,16 +26,14 @@ public class CartController extends HttpServlet {
                         if (cart_list == null) {
                             cartList.add(cm);
                             session.setAttribute("cart-list", cartList);
-
-                            out.println("session created and added the list");
+                            response.sendRedirect("index.jsp");
+//                            out.println("session created and added the list");
                         }else {
                             cartList = cart_list;
                             boolean exist = false;
-
                             for (Cart c: cartList) {
                                 if (c.getId() == id) {
                                     exist = true;
-                                    out.println("<h3 style='color:crimson; text-align: center'>Item Already in Cart. <a href=\"cart.jsp\">GO to Cart Page</a></h3>");
                                 }
                             }
                             if (!exist) {

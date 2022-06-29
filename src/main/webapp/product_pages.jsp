@@ -1,4 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.List" %>
+<%@ page import="javaservlet.entity.Product" %>
+<%@ page import="javaservlet.repository.ProductRepository" %>
+<%@ page import="javaservlet.connection.DBCon" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="javaservlet.entity.Cart" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -27,6 +33,17 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<%
+    ProductRepository pd = new ProductRepository(DBCon.getConnection());
+    List<Product> products = pd.getAllProduct();
+
+
+    ArrayList<Cart> cart_list =  (ArrayList<Cart>) session.getAttribute("cart-list");
+    if (cart_list != null) {
+        request.setAttribute("cart_list", cart_list);
+    }
+%>
+
 <jsp:include page="header.jsp" />
 <div class="container mt-5">
     <div class="row">
@@ -184,28 +201,37 @@
                  aria-labelledby="pills-home-tab">
                 <div id="rendenrProduct"
                      class="row  ms-1 large-columns-5 medium-columns-3 small-columns-2 row-normal">
-                    <c:forEach items="${listP}" var="product">
-                        <div class="col ">
-                            <div class="mt-3 mb-4">
-                                <div class="card" style="width: 14rem; height: 390px;">
-                                        <span class="heart-icon-cart mt-2"><button
-                                                class="btn fa-solid fa-heart icon add-like"></button></span>
-                                    <img src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/product-16.jpg"
-                                         class="card-img-top image image" alt="...">
-                                    <div class="card-body">
-                                        <div class="card-body-item ms-2">
-                                            <h6 class="card-title ms-5 ten-item-column ">${product.name}</h6>
-                                            <p class="card-text ms-3">
-                                                <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>
-                                                <span class="span-price gia">${product.price}<u>đ</u></span>
-                                            </p>
-                                            <button class="btn text-light ms-4 cart-slider add-to-cart add-to-cart">Thêm vào giỏ</button>
-                                        </div>
+                    <%
+                        if (!products.isEmpty()) {
+                            for (Product p : products) {
+                    %>
+                    <div class="col ">
+                        <div class="mt-3 mb-4">
+                            <div class="card" style="width: 14rem; height: 390px;">
+                                                            <span class="heart-icon-cart mt-2"><button
+                                                                    class="btn fa-solid fa-heart icon add-like"></button></span>
+                                <img src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/product-16.jpg"
+                                     class="card-img-top image image" alt="...">
+                                <div class="card-body">
+                                    <div class="card-body-item ms-2">
+                                        <h6 class="card-title ms-5 ten-item-column "><a href="detail?pid=<%= p.getId()%>"><%= p.getName()%></a></h6>
+                                        <p class="card-text ms-3">
+                                            <%--                                            <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>--%>
+                                            <span class="span-price gia"><%= p.getPrice()%><u>đ</u></span>
+                                        </p>
+                                        <button class="btn text-light ms-4 cart-slider add-to-cart add-to-cart"><a
+                                                href="add-to-cart?id=<%= p.getId()%>">Add to Cart</a></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </c:forEach>
+                    </div>
+                    <%
+                            }
+                        } else {
+                            out.println("There is no proucts");
+                        }
+                    %>
 
                     <!-- rendenrProduct -->
 

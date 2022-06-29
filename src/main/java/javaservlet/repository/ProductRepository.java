@@ -17,7 +17,9 @@ public class ProductRepository {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
+public ProductRepository() {
 
+}
 public ProductRepository(Connection conn) {
 	super();
 	this.conn = conn;

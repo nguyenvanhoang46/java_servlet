@@ -13,10 +13,10 @@ public class DetaiController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("pid");
-//        ProductRepository productRepository = new ProductRepository();
-//        Product p = productRepository.getProductByID(id);
-//        request.setAttribute("detail", p);
-//        request.getRequestDispatcher("detail.jsp").forward(request, response);
+        ProductRepository productRepository = new ProductRepository();
+        Product p = productRepository.getProductByID(id);
+        request.setAttribute("detail", p);
+        request.getRequestDispatcher("detail.jsp").forward(request, response);
     }
 
     @Override

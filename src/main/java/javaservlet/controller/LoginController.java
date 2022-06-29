@@ -9,8 +9,7 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
+
     }
 
     @Override
