@@ -665,6 +665,13 @@
     </div>
 </div>
 </div>
+ <nav class="display-flex">
+     <ul>
+         <li><a href="">1</a></li>
+         <li><a href="">2</a></li>
+         <li><a href="">3</a></li>
+     </ul>
+ </nav>
 <jsp:include page="footer.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

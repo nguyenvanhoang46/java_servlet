@@ -17,6 +17,8 @@ public class ProductRepository {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
+	private int noOfRecords;
+
 public ProductRepository() {
 
 }
@@ -71,6 +73,8 @@ public ProductRepository(Connection conn) {
 
 		return products;
 	}
+
+
 
 	public double getTotalCartPrice(ArrayList<Cart> cartList) {
 		double sum =0;
@@ -194,13 +198,47 @@ public ProductRepository(Connection conn) {
 	}
 
 
+	public List<Product> viewProduct(int offset, int noOfRecords) {
 
+		String query = "select SQL_CALC_FOUND_ROWS * from product limit " + offset + ", " + noOfRecords;
 
-//	public static void main(String[] args) {
-//		ProductRepository productRepository = new ProductRepository();
-//		List<Product> list = productRepository.getAllProduct();
+		List<Product> list = new ArrayList<Product>();
+
+		Product product = null;
+
+		try {
+			conn = new DBCon().getConnection();//mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				product = new Product();
+				product.setId(rs.getInt("id"));
+				product.setName(rs.getString("name"));
+				product.setPrice(rs.getInt("price"));
+				product.setImage(rs.getString("image"));
+				list.add(product);
+			}
+			rs.close();
+			rs = ps.executeQuery("SELECT FOUND_ROWS()");
+			if (rs.next())
+				this.noOfRecords = rs.getInt(1);
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public int getNoOfRecords() {
+		return noOfRecords;
+	}
+
+	public static void main(String[] args) {
+		ProductRepository productRepository = new ProductRepository();
+		List<Product> list = productRepository.getAllProduct();
 //		for (Product product : list) {
 //			System.out.println(product);
 //		}
-//	}
+
+
+	}
 }
