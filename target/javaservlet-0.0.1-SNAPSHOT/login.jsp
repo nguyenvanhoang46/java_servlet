@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -26,20 +27,20 @@
 <body>
 <div class="container-item-box">
     <div class="forms-container">
-        <div class="signin-signup" id="id01">
-            <form action="" class="sign-in-form" id="from-login">
+        <div class="signin-signup">
+            <form action="login" method="post" class="sign-in-form" id="from-login">
                 <h2 class="title">Đăng nhập</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input id="username" name="username" type="text" placeholder="Tài khoản" />
+                    <input id="inputEmail" name="username" type="text" placeholder="Tài khoản" required="" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input id="passwork" name="passwork" type="password" placeholder="Mật khẩu" />
+                    <input id="inputPassword" name="password" type="password" placeholder="Mật khẩu" required="" />
                 </div>
 
                 <p class="text-danger" id="notifi-login"></p>
-                <input type="button" id="log-in" value="Login" class="btn login-product solid" />
+                <button class="btn btn-success btn-block" type="submit">Đăng nhập</button>
 
                 <p class="social-text">Hoặc Đăng nhập bằng các nền tảng xã hội</p>
 
@@ -58,43 +59,43 @@
                     </a>
                 </div>
             </form>
-            <form action="#" class="sign-up-form"  id="from-1">
-                <h2 class="title">Đăng ký</h2>
+<%--            <form action="#" class="sign-up-form"  id="from-1">--%>
+<%--                <h2 class="title">Đăng ký</h2>--%>
 
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input id="fullname" type="text" placeholder="Tài khoản" />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input id="email" type="email" placeholder="Email" />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input id="password-sign" type="password" placeholder="Mật khẩu" />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />
-                </div>
-                <p class="text-danger" id="notification"></p>
-                <input type="submit" class="btn login-product" onclick="registerNewUser()" value="Đăng ký" />
-                <p class="social-text">Hoặc Đăng ký với các nền tảng xã hội</p>
-                <div class="social-media">
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </form>
+<%--                <div class="input-field">--%>
+<%--                    <i class="fas fa-user"></i>--%>
+<%--                    <input id="fullname" type="text" placeholder="Tài khoản" />--%>
+<%--                </div>--%>
+<%--                <div class="input-field">--%>
+<%--                    <i class="fas fa-envelope"></i>--%>
+<%--                    <input id="email" type="email" placeholder="Email" />--%>
+<%--                </div>--%>
+<%--                <div class="input-field">--%>
+<%--                    <i class="fas fa-lock"></i>--%>
+<%--                    <input id="password-sign" type="password" placeholder="Mật khẩu" />--%>
+<%--                </div>--%>
+<%--                <div class="input-field">--%>
+<%--                    <i class="fas fa-lock"></i>--%>
+<%--                    <input id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />--%>
+<%--                </div>--%>
+<%--                <p class="text-danger" id="notification"></p>--%>
+<%--                <input type="submit" class="btn login-product" onclick="registerNewUser()" value="Đăng ký" />--%>
+<%--                <p class="social-text">Hoặc Đăng ký với các nền tảng xã hội</p>--%>
+<%--                <div class="social-media">--%>
+<%--                    <a href="#" class="social-icon">--%>
+<%--                        <i class="fab fa-facebook-f"></i>--%>
+<%--                    </a>--%>
+<%--                    <a href="#" class="social-icon">--%>
+<%--                        <i class="fab fa-twitter"></i>--%>
+<%--                    </a>--%>
+<%--                    <a href="#" class="social-icon">--%>
+<%--                        <i class="fab fa-google"></i>--%>
+<%--                    </a>--%>
+<%--                    <a href="#" class="social-icon">--%>
+<%--                        <i class="fab fa-linkedin-in"></i>--%>
+<%--                    </a>--%>
+<%--                </div>--%>
+<%--            </form>--%>
         </div>
     </div>
 

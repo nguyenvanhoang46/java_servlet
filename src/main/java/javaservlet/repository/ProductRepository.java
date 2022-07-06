@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javaservlet.connection.DBCon;
+import javaservlet.entity.Account;
 import javaservlet.entity.Cart;
 import javaservlet.entity.Category;
 import javaservlet.entity.Product;
@@ -47,10 +48,30 @@ public ProductRepository(Connection conn) {
 		return list;
 	}
 
-//	public List<Product> getLimitProducts(Integer perPage) {
-//		List<Product> products = new ArrayList<>();
-//		String query = "select * from product "
-//	}
+	public Account login(String username, String password) {
+		String query = "select * from account\n"
+				+ "where [username] = ?\n"
+				+ " and password = ?";
+		try {
+			conn = new DBCon().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, username);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				return new Account(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getInt(5),
+						rs.getInt(6));
+			}
+		}catch (Exception e){
+
+		}
+	return null;
+	}
 
 	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
 		List<Cart> products = new ArrayList<Cart>();
