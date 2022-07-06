@@ -47,6 +47,11 @@ public ProductRepository(Connection conn) {
 		return list;
 	}
 
+//	public List<Product> getLimitProducts(Integer perPage) {
+//		List<Product> products = new ArrayList<>();
+//		String query = "select * from product "
+//	}
+
 	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
 		List<Cart> products = new ArrayList<Cart>();
 		try {

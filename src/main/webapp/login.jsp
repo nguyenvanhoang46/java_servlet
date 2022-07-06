@@ -10,24 +10,36 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fonts/fontawesome-free-6.0.0/fontawesome-free-6.0.0-web/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container-item-box">
     <div class="forms-container">
         <div class="signin-signup" id="id01">
-            <form action="login" method="post" class="sign-in-form" id="from-login">
+            <form action="" class="sign-in-form" id="from-login">
                 <h2 class="title">Đăng nhập</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input id="username" name="user" type="text" placeholder="Tài khoản" />
+                    <input id="username" name="username" type="text" placeholder="Tài khoản" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input id="passwork" name="pass" type="password" placeholder="Mật khẩu" />
+                    <input id="passwork" name="passwork" type="password" placeholder="Mật khẩu" />
                 </div>
 
                 <p class="text-danger" id="notifi-login"></p>
-                <button type="submit" class="btn login-product">đăng nhập</button>
+                <input type="button" id="log-in" value="Login" class="btn login-product solid" />
 
                 <p class="social-text">Hoặc Đăng nhập bằng các nền tảng xã hội</p>
 
@@ -128,6 +140,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script>
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");

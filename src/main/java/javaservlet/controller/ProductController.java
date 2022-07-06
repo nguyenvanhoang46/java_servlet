@@ -42,7 +42,7 @@ public class ProductController extends HttpServlet {
 		request.setAttribute("listC", listC);
 
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+//		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	/**

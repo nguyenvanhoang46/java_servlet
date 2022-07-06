@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ListPagesController", value = "/ListPagesController")
+@WebServlet(name = "ListPagesController", urlPatterns = {"/listPages"})
 public class ListPagesController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,14 +19,13 @@ public class ListPagesController extends HttpServlet {
             page = Integer.parseInt(request.getParameter("page"));
         ProductRepository productRepository = new ProductRepository();
         List<Product> list = productRepository.viewProduct((page-1)*recordsPerPage, recordsPerPage);
-
         int noOfRecords = productRepository.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
+//        List<Product> products =
 
-        request.setAttribute("employeeList", list);
+        request.setAttribute("products", list);
         request.setAttribute("noOfPages", noOfPages);
         request.setAttribute("currentPage", page);
-
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
