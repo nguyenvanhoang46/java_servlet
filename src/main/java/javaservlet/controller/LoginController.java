@@ -12,21 +12,19 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
-        ProductRepository productRepository = new ProductRepository();
-        Account a = productRepository.login(username, password);
-        if (a == null) {
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-
-        }else {
-            request.getRequestDispatcher("listPages").forward(request, response);
-        }
-
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        ProductRepository productRepository = new ProductRepository();
+        Account a = productRepository.login(username, password);
+        if (a == null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("listPages");
+        }
     }
 }

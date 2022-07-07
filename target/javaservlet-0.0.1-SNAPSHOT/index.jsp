@@ -204,21 +204,20 @@
             </div>
         </div>
     </c:forEach>
-
-                <div class="container d-flex justify-content-center">
+                <div class="container mt-4 d-flex justify-content-center">
                     <nav class="text-center" aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
+                                <a class="page-link text-danger" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                             <c:forEach begin="1" end="${noOfPages}" var="item">
-                                <li class="page-item"><a class="page-link" href="listPages?page=${item}">${item}</a></li>
+                                <li class="page-item ms-4"><a class="page-link text-black" href="listPages?page=${item}">${item}</a></li>
                             </c:forEach>
 
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
+                            <li class="page-item ms-4">
+                                <a class="page-link text-danger" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>

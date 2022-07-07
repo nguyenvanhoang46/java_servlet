@@ -59,43 +59,43 @@
                     </a>
                 </div>
             </form>
-<%--            <form action="#" class="sign-up-form"  id="from-1">--%>
-<%--                <h2 class="title">Đăng ký</h2>--%>
+            <form action="#" class="sign-up-form"  id="from-1">
+                <h2 class="title">Đăng ký</h2>
 
-<%--                <div class="input-field">--%>
-<%--                    <i class="fas fa-user"></i>--%>
-<%--                    <input id="fullname" type="text" placeholder="Tài khoản" />--%>
-<%--                </div>--%>
-<%--                <div class="input-field">--%>
-<%--                    <i class="fas fa-envelope"></i>--%>
-<%--                    <input id="email" type="email" placeholder="Email" />--%>
-<%--                </div>--%>
-<%--                <div class="input-field">--%>
-<%--                    <i class="fas fa-lock"></i>--%>
-<%--                    <input id="password-sign" type="password" placeholder="Mật khẩu" />--%>
-<%--                </div>--%>
-<%--                <div class="input-field">--%>
-<%--                    <i class="fas fa-lock"></i>--%>
-<%--                    <input id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />--%>
-<%--                </div>--%>
-<%--                <p class="text-danger" id="notification"></p>--%>
-<%--                <input type="submit" class="btn login-product" onclick="registerNewUser()" value="Đăng ký" />--%>
-<%--                <p class="social-text">Hoặc Đăng ký với các nền tảng xã hội</p>--%>
-<%--                <div class="social-media">--%>
-<%--                    <a href="#" class="social-icon">--%>
-<%--                        <i class="fab fa-facebook-f"></i>--%>
-<%--                    </a>--%>
-<%--                    <a href="#" class="social-icon">--%>
-<%--                        <i class="fab fa-twitter"></i>--%>
-<%--                    </a>--%>
-<%--                    <a href="#" class="social-icon">--%>
-<%--                        <i class="fab fa-google"></i>--%>
-<%--                    </a>--%>
-<%--                    <a href="#" class="social-icon">--%>
-<%--                        <i class="fab fa-linkedin-in"></i>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </form>--%>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input id="fullname" type="text" placeholder="Tài khoản" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input id="email" type="email" placeholder="Email" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input id="password-sign" type="password" placeholder="Mật khẩu" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />
+                </div>
+                <p class="text-danger" id="notification"></p>
+                <input type="submit" class="btn login-product" onclick="registerNewUser()" value="Đăng ký" />
+                <p class="social-text">Hoặc Đăng ký với các nền tảng xã hội</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -115,7 +115,7 @@
                     </a>
                 </div>
             </div>
-            <img src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/logo-mona-2.png" class="image" alt="" />
+            <a href="listPages"><img src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/logo-mona-2.png" class="image" alt="" /></a>
         </div>
         <div class="panel right-panel">
             <div class="content">

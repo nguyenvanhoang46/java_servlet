@@ -46,7 +46,8 @@
         </div>
         <div class="ms-3 mt-1 row-top2"></div>
         <div class="ms-2 row-top text-light">
-          <button class="btn text-light" id="logged"></button>
+<%--          <button class="btn text-light" id="logged"></button>--%>
+        <a href="login" class="text-light text-decoration: none" >Đăng nhập</a>
         </div>
       </div>
 
@@ -58,9 +59,7 @@
       <div class="col">
         <div class="logo">
           <a href="./Index.html">
-            <img height="70"
-                 src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/logo-mona-2.png"
-                 alt="">
+            <img height="70" src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/logo-mona-2.png" alt="">
           </a>
         </div>
       </div>
@@ -86,57 +85,57 @@
               <i class="fa-solid fa-bag-shopping"> ${cart_list.size()} </i>
             </a>
             <div class="header-item"></div>
-            <div class="header-nofify">
-              <div class="mx-5 cart-shopping">
-                <div class="p-4">
-                  <div class="select-items">
-                    <table class="">
-                      <tbody>
-                      <tr class="mt-5">
-                        <td class="si-pic">
-                          <img class="img-cart" src="hhttps://cdn3.dhht.vn/wp-content/uploads/2017/09/35_MTP-1302D-7A1VDF-399x399.jpg" alt="">
-                        </td>
-                        <td class="mx-4 si-text">
-                          <div class="product-selected">
-                            <p class="cart-price-item">₫60.00 x 1</p>
-                            <h6>Kabino Bedside Table</h6>
-                          </div>
-                        </td>
-                        <td class="si-close">
-                          <i class="ti-close"></i>
-                        </td>
-                      </tr>
-                      <tr class="mt-5">
-                        <td class="si-pic"><img class="img-cart"
-                                                src="http://127.0.0.1:5500/Template/img/products/product-1.jpg"
-                                                alt="">
-                        </td>
-                        <td class="mx-4 si-text">
-                          <div class="product-selected">
-                            <p class="cart-price-item">₫60.00 x 1</p>
-                            <h6>Kabino Bedside Table</h6>
-                          </div>
-                        </td>
-                        <td class="si-close">
-                          <i class="ti-close"></i>
-                        </td>
-                      </tr>
+<%--            <div class="header-nofify">--%>
+<%--              <div class="mx-5 cart-shopping">--%>
+<%--                <div class="p-4">--%>
+<%--                  <div class="select-items">--%>
+<%--                    <table class="">--%>
+<%--                      <tbody>--%>
+<%--                      <tr class="mt-5">--%>
+<%--                        <td class="si-pic">--%>
+<%--                          <img class="img-cart" src="hhttps://cdn3.dhht.vn/wp-content/uploads/2017/09/35_MTP-1302D-7A1VDF-399x399.jpg" alt="">--%>
+<%--                        </td>--%>
+<%--                        <td class="mx-4 si-text">--%>
+<%--                          <div class="product-selected">--%>
+<%--                            <p class="cart-price-item">₫60.00 x 1</p>--%>
+<%--                            <h6>Kabino Bedside Table</h6>--%>
+<%--                          </div>--%>
+<%--                        </td>--%>
+<%--                        <td class="si-close">--%>
+<%--                          <i class="ti-close"></i>--%>
+<%--                        </td>--%>
+<%--                      </tr>--%>
+<%--                      <tr class="mt-5">--%>
+<%--                        <td class="si-pic"><img class="img-cart"--%>
+<%--                                                src="http://127.0.0.1:5500/Template/img/products/product-1.jpg"--%>
+<%--                                                alt="">--%>
+<%--                        </td>--%>
+<%--                        <td class="mx-4 si-text">--%>
+<%--                          <div class="product-selected">--%>
+<%--                            <p class="cart-price-item">₫60.00 x 1</p>--%>
+<%--                            <h6>Kabino Bedside Table</h6>--%>
+<%--                          </div>--%>
+<%--                        </td>--%>
+<%--                        <td class="si-close">--%>
+<%--                          <i class="ti-close"></i>--%>
+<%--                        </td>--%>
+<%--                      </tr>--%>
 
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="select-total d-flex">
-                    <span>total:</span>
-                    <h5>₫120.00</h5>
-                  </div>
-                  <div class="select-button">
-                    <div><a href="#" class="primary-btn view-card">VIEW CARD</a></div>
-                    <div><a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<%--                      </tbody>--%>
+<%--                    </table>--%>
+<%--                  </div>--%>
+<%--                  <div class="select-total d-flex">--%>
+<%--                    <span>total:</span>--%>
+<%--                    <h5>₫120.00</h5>--%>
+<%--                  </div>--%>
+<%--                  <div class="select-button">--%>
+<%--                    <div><a href="#" class="primary-btn view-card">VIEW CARD</a></div>--%>
+<%--                    <div><a href="#" class="primary-btn checkout-btn">CHECK OUT</a>--%>
+<%--                    </div>--%>
+<%--                  </div>--%>
+<%--                </div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
           </div>
 
         </div>

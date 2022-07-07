@@ -49,9 +49,7 @@ public ProductRepository(Connection conn) {
 	}
 
 	public Account login(String username, String password) {
-		String query = "select * from account\n"
-				+ "where [username] = ?\n"
-				+ " and password = ?";
+		String query = "select * from account where username = ? and password = ?";
 		try {
 			conn = new DBCon().getConnection();
 			ps = conn.prepareStatement(query);
@@ -59,18 +57,19 @@ public ProductRepository(Connection conn) {
 			ps.setString(2, password);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				return new Account(
+				Account ac = new Account(
 						rs.getInt(1),
 						rs.getString(2),
 						rs.getString(3),
 						rs.getString(4),
 						rs.getInt(5),
-						rs.getInt(6));
+						rs.getInt(6));;
+				return ac;
 			}
 		}catch (Exception e){
-
+			System.out.println(e.getMessage());
 		}
-	return null;
+		return null;
 	}
 
 	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
