@@ -3,6 +3,7 @@
 .top-bar {
     background-color: #333333!important;
 }
+
 .row-top-address {
     padding-left: 70px;
 }
@@ -138,7 +139,7 @@
     height: 69%;
     display: flex;
     overflow: hidden;
-    border-bottom: solid 1px #ced4da; 
+    border-bottom: solid 1px #ced4da;
 }
 .p-img a,
 .p-img {
@@ -313,8 +314,8 @@
 .nav-link:hover {
     color: #c89979 !important;
     border-bottom: 1px solid #c89979 !important;
-    
-}   
+
+}
 .post-title {
     font-size: 1.2em;
     font-weight: 700;
@@ -376,7 +377,7 @@
 }
 .flex-icon > p {
     font-weight: 600;
-    
+
 }
 .inner-col > h3 {
     font-weight: 700;
@@ -389,7 +390,7 @@
 .social-icons > a {
     color: #ddd !important;
 
-    font-size: 32px; 
+    font-size: 32px;
 }
 .absolute-footer {
     border-top: 1px solid #999;

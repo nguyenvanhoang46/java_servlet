@@ -5,11 +5,7 @@
 <%@ page import="javaservlet.connection.DBCon" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="javaservlet.entity.Cart" %>
-
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +27,17 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 </head>
+<style>
+    .text-font {
+        color: #212529;
+        text-decoration: none;
+
+    }
+    .span-price{
+        display: flex;
+        justify-content: center;
+    }
+</style>
 <body>
 
 <%--<c:forEach items="${listP}" var="product">--%>
@@ -43,8 +50,6 @@
 <%
 //    ProductRepository pd = new ProductRepository(DBCon.getConnection());
 //    List<Product> products = pd.getAllProduct();
-
-
     ArrayList<Cart> cart_list =  (ArrayList<Cart>) session.getAttribute("cart-list");
     if (cart_list != null) {
         request.setAttribute("cart_list", cart_list);
@@ -185,19 +190,19 @@
         <div class="col ">
             <div class="mt-3 mb-4">
                 <div class="card" style="width: 14rem; height: 390px;">
-                                                            <span class="heart-icon-cart mt-2"><button
-                                                                    class="btn fa-solid fa-heart icon add-like"></button></span>
-                    <img src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/product-16.jpg"
-                         class="card-img-top image image" alt="...">
+                     <span class="heart-icon-cart mt-2">
+                         <button class="btn fa-solid fa-heart icon add-like"></button>
+                     </span>
+                    <img src="${product.image}" class="card-img-top image image" alt="...">
                     <div class="card-body">
                         <div class="card-body-item ms-2">
-                            <h6 class="card-title ms-5 ten-item-column "><a href="detail?pid=${product.id}">${product.name}</a></h6>
+                            <h6 class="card-title ms-5 ten-item-column "><a class="text-font" href="detail?pid=${product.id}">${product.name}</a></h6>
                             <p class="card-text ms-3">
-                                    <%--                                            <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>--%>
-                                <span class="span-price gia">${product.price}<u>đ</u></span>
+                                <span class="span-price text-center gia">${product.price}<u>đ</u></span>
                             </p>
-                            <button class="btn text-light ms-4 cart-slider add-to-cart add-to-cart"><a
-                                    href="add-to-cart?id=${product.id}">Add to Cart</a></button>
+                            <button class="btn text-light ms-4 cart-slider add-to-cart add-to-cart">
+                                <a class="text-font text-white" href="add-to-cart?id=${product.id}">Add to Cart</a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -685,10 +690,6 @@
     </div>
 </div>
 </div>
-
-
-
-
 
 <jsp:include page="footer.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -22,12 +22,11 @@ public class CartController extends HttpServlet {
 
                         HttpSession session = request.getSession();
                         ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
-
+                        out.println(cart_list);
                         if (cart_list == null) {
                             cartList.add(cm);
                             session.setAttribute("cart-list", cartList);
-                            response.sendRedirect("index.jsp");
-//                            out.println("session created and added the list");
+                            response.sendRedirect("listPages");
                         }else {
                             cartList = cart_list;
                             boolean exist = false;
@@ -38,7 +37,7 @@ public class CartController extends HttpServlet {
                             }
                             if (!exist) {
                                 cartList.add(cm);
-                               response.sendRedirect("index.jsp");
+                               response.sendRedirect("listPages");
                             }
                         }
                     }

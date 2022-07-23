@@ -7,10 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javaservlet.connection.DBCon;
-import javaservlet.entity.Account;
-import javaservlet.entity.Cart;
-import javaservlet.entity.Category;
-import javaservlet.entity.Product;
+import javaservlet.entity.*;
 
 public class ProductRepository {
 
@@ -72,6 +69,43 @@ public ProductRepository(Connection conn) {
 		return null;
 	}
 
+	public Account checkAccount(String username) {
+		String query = "select * from account where username = ?";
+		try {
+			conn = new DBCon().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Account ac = new Account(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getInt(5),
+						rs.getInt(6));;
+				return ac;
+			}
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+
+	public void singup(String username, String password, String email) {
+		String query = "insert into account values (null,?,?,?,0,0)";
+		try {
+			conn = new DBCon().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, username);
+			ps.setString(2,password);
+			ps.setString(3,email);
+			ps.executeUpdate();
+		}catch (Exception e) {
+
+		}
+	}
+
 	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
 		List<Cart> products = new ArrayList<Cart>();
 		try {
@@ -85,6 +119,7 @@ public ProductRepository(Connection conn) {
 						Cart row = new Cart();
 						row.setId(rs.getInt("id"));
 						row.setName(rs.getString("name"));
+						row.setImage(rs.getString("image"));
 						row.setPrice(rs.getInt("price")*item.getQuantity());
 						row.setQuantity(item.getQuantity());
 						products.add(row);
@@ -99,7 +134,22 @@ public ProductRepository(Connection conn) {
 		return products;
 	}
 
-
+	public boolean insertOrder(Order model) {
+		boolean result = false;
+		try {
+			String query = "insert into orders (p_id, u_id, o_quantity, o_date) values(?,?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, model.getId());
+			ps.setInt(2, model.getUid());
+			ps.setInt(3, model.getQunatity());
+			ps.setString(4, model.getDate());
+			ps.executeUpdate();
+			result = true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return result;
+	}
 
 	public double getTotalCartPrice(ArrayList<Cart> cartList) {
 		double sum =0;
@@ -112,6 +162,7 @@ public ProductRepository(Connection conn) {
 					rs = ps.executeQuery();
 					while (rs.next()) {
 						sum+= rs.getInt("price")* item.getQuantity();
+
 					}
 				}
 			}
@@ -259,10 +310,10 @@ public ProductRepository(Connection conn) {
 
 	public static void main(String[] args) {
 		ProductRepository productRepository = new ProductRepository();
-		List<Product> list = productRepository.getAllProduct();
-//		for (Product product : list) {
-//			System.out.println(product);
-//		}
+		List<Product> list = productRepository.viewProduct(1,2);
+		for (Product product : list) {
+			System.out.println("ff"+product);
+		}
 
 
 	}

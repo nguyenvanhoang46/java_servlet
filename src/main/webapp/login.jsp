@@ -30,6 +30,7 @@
         <div class="signin-signup">
             <form action="login" method="post" class="sign-in-form" id="from-login">
                 <h2 class="title">Đăng nhập</h2>
+                    <p class="text-danger">${mess}</p>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input id="inputEmail" name="username" type="text" placeholder="Tài khoản" required="" />
@@ -59,27 +60,27 @@
                     </a>
                 </div>
             </form>
-            <form action="#" class="sign-up-form"  id="from-1">
+            <form action="signup" method="post" class="sign-up-form"  id="from-1">
                 <h2 class="title">Đăng ký</h2>
 
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input id="fullname" type="text" placeholder="Tài khoản" />
+                    <input name="username" id="fullname" type="text" placeholder="Tài khoản" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input id="email" type="email" placeholder="Email" />
+                    <input name="email" id="email" type="email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input id="password-sign" type="password" placeholder="Mật khẩu" />
+                    <input name="password"  id="password-sign" type="password" placeholder="Mật khẩu" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />
+                    <input name="repassword" id="confirmpassword" type="password" placeholder="Xác nhận mật khẩu" />
                 </div>
                 <p class="text-danger" id="notification"></p>
-                <input type="submit" class="btn login-product" onclick="registerNewUser()" value="Đăng ký" />
+                <button class="btn btn-success btn-block" type="submit">Đăng Ký</button>
                 <p class="social-text">Hoặc Đăng ký với các nền tảng xã hội</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -108,7 +109,7 @@
                     ex ratione. Aliquid!
                 </p>
                 <button class="btn text-light login-product transparent" id="sign-up-btn">
-                    Đăng ký
+                    <a href="signup">Đăng ký</a>
                 </button>
                 <div class="mt-4">
                     <a href="index.html"> <img src="" alt="">
@@ -142,19 +143,19 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script>
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container-item-box");
-    let users = [];
-    let userLogin = [];
-    sign_up_btn.addEventListener("click", () => {
-        container.classList.add("sign-up-mode");
-    });
+<%--<script>--%>
+<%--    const sign_in_btn = document.querySelector("#sign-in-btn");--%>
+<%--    const sign_up_btn = document.querySelector("#sign-up-btn");--%>
+<%--    const container = document.querySelector(".container-item-box");--%>
+<%--    let users = [];--%>
+<%--    let userLogin = [];--%>
+<%--    sign_up_btn.addEventListener("click", () => {--%>
+<%--        container.classList.add("sign-up-mode");--%>
+<%--    });--%>
 
-    sign_in_btn.addEventListener("click", () => {
-        container.classList.remove("sign-up-mode");
-    });
-</script>
+<%--    sign_in_btn.addEventListener("click", () => {--%>
+<%--        container.classList.remove("sign-up-mode");--%>
+<%--    });--%>
+<%--</script>--%>
 </body>
 </html>

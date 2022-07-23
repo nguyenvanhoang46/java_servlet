@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="javaservlet.entity.Cart" %>
 <%@ page import="java.util.List" %>
@@ -29,26 +30,33 @@
   <div class="container">
     <div class="row row-top">
       <div class="col-5 mt-2">
-                            <span class="row-top-address row-top text-light">
-                                <span class="" style="font-size: 17px;"><img alt="govno" src="<%=request.getContextPath() + "/image/placeholder.png"%>"></span>
-                                <span class="ms-2">319 - C16 Lý Th ường Kiệt, P.15, Q.Tp.HCM
-                            </span>
+          <span class="row-top-address row-top text-light">
+              <span class="" style="font-size: 17px;"><img alt="govno" src="<%=request.getContextPath() + "/image/placeholder.png"%>"></span>
+              <span class="ms-2">319 - C16 Lý Th ường Kiệt, P.15, Q.Tp.HCM
+          </span>
         </span>
         <span class="text-light ps-3"><img alt="govno" src="<%=request.getContextPath() + "/image/telephone.png"%>"></span>
         <span class="text-light ps-1">076 922 0162</span>
       </div>
-      <div class="col-5"></div>
-      <div class="col-2  mt-2 row-top row-top-item text-light d-flex align-items-center">
-        <div class=" row-top ">
-          <img alt="govno" src="<%=request.getContextPath() + "/image/facebook.png"%>">
-          <img alt="govno" class="ms-2" src="<%=request.getContextPath() + "/image/instagram.png"%>">
-          <img alt="govno" class="ms-2" src="<%=request.getContextPath() + "/image/twitter.png"%>">
-        </div>
-        <div class="ms-3 mt-1 row-top2"></div>
-        <div class="ms-2 row-top text-light">
-<%--          <button class="btn text-light" id="logged"></button>--%>
-        <a href="login" class="text-light text-decoration: none" >Đăng nhập</a>
-        </div>
+      <div class="col-3"></div>
+      <div class="col-4  mt-2 row-top row-top-item text-light d-flex align-items-center">
+            <div class="d-flex" style="margin-left: 190px">
+                <div class=" row-top ">
+                    <img alt="govno" src="<%=request.getContextPath() + "/image/facebook.png"%>">
+                    <img alt="govno" class="ms-1" src="<%=request.getContextPath() + "/image/instagram.png"%>">
+                    <img alt="govno" class="ms-1" src="<%=request.getContextPath() + "/image/twitter.png"%>">
+                </div>
+                <div class="ms-1 mt-1 row-top2"></div>
+                <div class="ms-3 row-top d-flex text-light">
+                    <c:if test="${sessionScope.acc != null}">
+                        <p class="ms-2">${sessionScope.acc.username}</p>
+                        <a href="logout" class="ms-3 text-light text-decoration: none" >Logout</a>
+                    </c:if>
+                    <c:if test="${sessionScope.acc == null}">
+                        <a href="login" class="text-light text-decoration: none" >Login</a>
+                    </c:if>
+                </div>
+            </div>
       </div>
 
     </div>
@@ -58,7 +66,7 @@
     <div class="row">
       <div class="col">
         <div class="logo">
-          <a href="./Index.html">
+          <a href="listPages">
             <img height="70" src="http://mauweb.monamedia.net/donghohaitrieu/wp-content/uploads/2019/07/logo-mona-2.png" alt="">
           </a>
         </div>

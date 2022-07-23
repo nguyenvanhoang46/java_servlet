@@ -52,10 +52,10 @@
                         <thead>
                         <tr class="border-cart-item">
                             <th>Sản phẩm</th>
-                            <th></th>
+                            <th class="produtcto">Tên</th>
                             <th class="produtcto">Giá</th>
                             <th class="produtcto">Số lượng</th>
-                            <th class="produtcto">Tổng</th>
+<%--                            <th class="produtcto">Tổng</th>--%>
                         </tr>
 
                         </thead>
@@ -66,10 +66,10 @@
                         %>
                         <tr class="cart_item-form">
                             <td class="cart-pic first-row">
-                                <img src="" alt="">
+                                <img src="<%= c.getImage()%>" alt="">
                             </td>
                             <td class="cart-title first-row">
-                                <h5><%= c.getName()%></h5>
+                                <h5 class="mt-2"><%= c.getName()%></h5>
                             </td>
                             <td class="p-price">
                                 <span class="mt-2"><%= c.getPrice()%> ₫</span>
@@ -78,14 +78,14 @@
                                 <form action="order-now" method="post" class="mt-2 form-inline quantity-list-cart">
                                     <input type="hidden" name="id" value="<%= c.getId()%>" class="form-input">
                                     <div class="form-group d-flex justify-content-between">
-                                        <a class="btn bnt-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>"><i class="fas fa-plus-square"></i></a>
+                                        <a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i class="mt-2 fas fa-minus-square"></i></a>
                                         <input type="text" name="quantity" class="form-control " value="<%=c.getQuantity()%>" readonly>
-                                        <a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i class="fas fa-minus-square"></i></a>
+                                        <a class="btn  bnt-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>"><i class="mt-1 fas fa-plus-square"></i></a>
                                     </div>
                                     <%-- <button type="submit" class="btn btn-primary btn-sm">Buy</button>--%>
                                 </form>
                             </td>
-                            <td class="total-price first-row">${total} ₫</td>
+<%--                            <td class="total-price first-row">${total} ₫</td>--%>
                             <td class="close-td first-row me-5"><a href="remove-from-cart?id=<%=c.getId() %>"><i class="far fa-times-circle"></i></a></td>
                         </tr>
                         <%
@@ -95,12 +95,12 @@
                 </div>
                 <div class="d-flex mt-5">
                     <div class="continue-shopping pull-left  text-left">
-                        <a class=" button-continue-shopping button primary is-outline" href="">← TIẾP TỤC XEM SẢN
+                        <a class=" button-continue-shopping button primary is-outline" href="listPages">← TIẾP TỤC XEM SẢN
                             PHẨM </a>
                     </div>
-                    <div class="ms-4 primary mt-0 update-cart pull-left small edit-all">
-                        CẬP NHẬT GIỎ HÀNG
-                    </div>
+<%--                    <div class="ms-4 primary mt-0 update-cart pull-left small edit-all">--%>
+<%--                        CẬP NHẬT GIỎ HÀNG--%>
+<%--                    </div>--%>
                 </div>
             </div>
 
@@ -125,10 +125,8 @@
                         <div class="">$ ${ (total>0)?total:0 } </div>
                     </div>
                 </div>
-
-
                 <div class="wc-proceed-to-checkout">
-                    <a href="{{ url('checkout') }}" class="mt-4 checkout-button button alt wc-forward">
+                    <a href="checkout.jsp" class="mt-4 checkout-button button alt wc-forward">
                         TIẾN HÀNH THANH TOÁN
                     </a>
                 </div>

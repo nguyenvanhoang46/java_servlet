@@ -22,8 +22,11 @@ public class LoginController extends HttpServlet {
         ProductRepository productRepository = new ProductRepository();
         Account a = productRepository.login(username, password);
         if (a == null) {
+            request.setAttribute("mess","Sai mật khẩu vui lòng nhập lại!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
             response.sendRedirect("listPages");
         }
     }

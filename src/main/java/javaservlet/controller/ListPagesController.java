@@ -21,7 +21,6 @@ public class ListPagesController extends HttpServlet {
         List<Product> list = productRepository.viewProduct((page-1)*recordsPerPage, recordsPerPage);
         int noOfRecords = productRepository.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
-//        List<Product> products =
 
         request.setAttribute("products", list);
         request.setAttribute("noOfPages", noOfPages);

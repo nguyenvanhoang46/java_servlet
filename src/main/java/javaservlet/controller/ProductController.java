@@ -36,7 +36,7 @@ public class ProductController extends HttpServlet {
 		request.setAttribute("listC", listC);
 
 		// TODO Auto-generated method stub
-//		request.getRequestDispatcher("/index.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -46,9 +46,5 @@ public class ProductController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-    }
+
 }
